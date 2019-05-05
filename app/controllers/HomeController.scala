@@ -33,17 +33,14 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     val data = request.body.asJson.get
 
     val w: JsResult[Command] = Json.fromJson[Command](data)
-
-
+    
     val c: Command = w.get
 
     val validCommands = c.commands.filter( ValidCommands.isValidCommand(_))
 
-    val x = java.util.Base64.getEncoder.encode("x".getBytes())
-
     val results : List[String] = validCommands.map(_.!!)
 
-    val bytesEncoded  : List[String] = results.map( x => java.util.Base64.getEncoder.encodeToString(x.toString.getBytes()).toString)
+    val bytesEncoded  : List[String] = results.map( x => java.util.Base64.getEncoder.encodeToString(x.toString.getBytes()))
 
     val res = CommandResults((validCommands zip bytesEncoded))
 
