@@ -18,3 +18,8 @@ Returns the list of results:
 
 where **xxxxx** is a Base64 encoded string.
 
+To execute the code run:
+
+```sh
+$ sbt run
+```
