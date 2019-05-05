@@ -10,3 +10,16 @@ Post Json to **/pipe** endpoint:
 	"commands" : ["ls /tmp", "ls /tmp"]
 }
 ```
+
+Returns the list of results:
+```
+{"result":[["ls /tmp","xxxxx"],["ls /tmp","xxxxxx"]]}
+```
+
+where **xxxxx** is a Base64 encoded string.
+
+To execute the code run:
+
+```sh
+$ sbt run
+```
