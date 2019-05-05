@@ -43,11 +43,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 
     val results : List[String] = validCommands.map(_.!!)
 
-    val text = "This is plaintext."
-    val bytesEncoded3 = java.util.Base64.getEncoder.encode(text.getBytes())
-
     val bytesEncoded  : List[String] = results.map( x => java.util.Base64.getEncoder.encodeToString(x.toString.getBytes()).toString)
-
 
     val res = CommandResults((validCommands zip bytesEncoded))
 
