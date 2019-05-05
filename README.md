@@ -14,7 +14,7 @@ Post Json to **/pipe** endpoint:
 Returns the list of results:
 ```
 {"result":[["ls /tmp","xxxxx"],["ls /tmp","xxxxxx"]]}
-``
+```
 
 where **xxxxx** is a Base64 encoded string.
 
